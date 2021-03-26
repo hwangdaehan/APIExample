@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR|ZCOOL+QingKe+HuangYou');
+
+* {
+	margin:0;
+	padding:0;
+	color:#000;
+	font-family: 'Noto Sans KR', sans-serif;
+	box-sizing: border-box;
+}
+
+
+#title_bar {
+	color : #848484;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	outline: none;
+}
+.container {
+	width:1440px;
+	margin:0 auto;
+}
+header {
+	width:100%;
+	height:80px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+header > h2 {
+	margin-left:20px;
+}
+
+header > nav {
+	width:600px;
+	height:100%;
+	float :right;
+}
+
+header ul {
+	width:100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+header ul > li {
+	font-size:20px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+#content {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 40px;
+}
+
+#content > .item {
+	width:30%;
+}
+
+.img {
+	width: 100%;
+	height: 250px;
+}
+
+.img > img {
+	width: 100%;
+	height:100%;
+	object-fit: cover;
+	border-radius: 10px 10px 0 0;
+}
+
+.item .info {
+	background: #fff;
+	padding: 20px;
+	border-radius: 0 0 10px 10px;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.button-row {
+	width: 100%;
+	text-align: right;
+}
+
+.btn-sm {
+	padding: 8px 12px;
+	font-size:12px;
+	color:white;
+	width:auto;
+	border:2px solid #ddd;
+}
+
+.info > h4 {
+	font-size:30px;
+	color:rgba(0,0,0,0.9);
+}
+.info > p {
+	color:#555;
+}
+
+
+#naver_id_login {
+	float:left;
+	padding : 10px;
+}
+
+.input_popup {
+	margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+	border :1px solid #337ab7;
+}
+.input_popup table {
+	tet-align :center;
+} 
+
+
+.filebox label {
+  display: inline-block;
+  padding: .5em .75em;
+  color: #fff;
+  font-size: inherit;
+  line-height: normal;
+  vertical-align: middle;
+  background-color: #5cb85c;
+  cursor: pointer;
+  border: 1px solid #4cae4c;
+  border-radius: .25em;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+.filebox label:hover {
+  background-color: #6ed36e;
+}
+
+.filebox label:active {
+  background-color: #367c36;
+}
+
+.filebox input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.input_popup table tr{
+	margin-bottom : 15px;
+}
+
+#password_view {
+	width: 40px;
+	height: 20px;	
+}
+
+.reply_div {
+	margin-top :4%;
+	margin-left: 20%;
+}
+
+.reply_div input {
+	display : inline;
+}
+
+.chat_main {
+	background-color :#fafafa;
+	position : absolute;
+	right :0;
+	top :60%;
+	width : 25%;
+	height : 80px;
+	z-index : 1;
+}
+
+.chat_main {
+	background-color :#fafafa;
+	display : inline;
+	position : absolute;
+	right :0;
+	top :60%;
+	width : 25%;
+	height : 300px;
+	z-index : 1;
+}
+
+.chat_start_main {
+	background-color :#fafafa;
+	display : inline;
+	position : absolute;
+	right :0;
+	bottom :0;
+	width : 15%;
+	font-size : 17px;
+	text-align: center;
+	height : 40px;
+	z-index : 1;
+	background-color :#e60e45;
+	color :white;
+}
+
+.chat_main .modal-header {
+	background-color :#e60e45;
+	color :white;
+}
+
+/* 사이드바 스타일 */
+.sidenav {
+	height:100%;
+	width: 0;
+	position: fixed;
+	z-index:1;
+	top: 0;
+	left: 0;
+	background-color: #e60e45;
+	overflow-x: hidden;
+	transition:0.5s ease-in-out;
+	padding-top: 60px;
+}
+.sidenav a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #fff;
+	display: block;
+	transition: 0.2s ease-in-out;
+}
+.sidenav a:hover, .offcanvas a:focus {
+	color: #000;
+}
+.closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px !important;
+	margin-left: 50px;
+}
+.openmenu:hover {
+	color:rgb(0,154,200);
+	transition:0.5s ease-in-out;
+}
+.openmenu {
+	font-size: 25px;
+	cursor:pointer;
+	transition:0.5s ease-in-out;
+}
+.openmenu > i {
+	font-size: 30px;
+}
+/* 미디어쿼리 적용 */
+@media screen and (max-height:450px) {
+	.sidenav {
+		padding-top:15px;
+	}
+	.sidenav a {
+		font-size: 18px;
+	}
+}
+
+.letter {
+	margin-left : 20px;
+	border : 1px solid white;
+	background-color : white;
+	margin-bottom : 10px;
+	display :inline-block;
+	width : 300px;
+	height : 150px;
+}
+.letter .header {
+	background-color : #e60e45;
+	font-color : white;
+}
+
+#mssage_send_btn {
+	float : left;
+	margin-top : -50px;
+	margin-left : 10px;
+	height :35px;
+}
+
+.msg_form .modal-body table tbody tr {
+	margin-bottom : 20px;
+}
+
+#sideContentArea {
+	height : 550px;
+	overflow-y:scroll;
+}
+
+.menu_ul li a {
+	color:#f97088;
+	text-decoration:none;
+}
+
+
+.profile_div {
+	display : block;
+	border :1px solid black;
+	width: 20px;
+	float:right;
+	margin-right :10px;
+	height :20px;
+	border-radius :50%;
+}
+
+
+ .profile_div img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}

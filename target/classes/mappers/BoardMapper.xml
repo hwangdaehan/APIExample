@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="main.com.board.dao.BoardMapper">
+	<insert id="insertBoard">
+		insert into TB_BOARD(bd_password,title,content,writer,file_nm,reply_cnt,creat_dt,user_id,delete_at,view_cnt)
+				values(#{bd_password},#{title},#{content},#{writer},#{file_nm},#{reply_cnt},SYSDATE(),#{user_id},#{delete_at},#{view_cnt})
+	</insert>
+	
+	<select id="findBoardList" resultType="main.com.board.vo.BoardVO">
+		SELECT sid,bd_password,title,content,writer,file_nm,reply_cnt,creat_dt,user_id,view_cnt FROM TB_BOARD WHERE delete_at=0
+	</select>
+	
+	<select id="findBoardView" resultType="main.com.board.vo.BoardVO">
+		SELECT * from TB_BOARD WHERE sid =#{sid}
+	</select> 
+	
+	<update id="addViewCount">
+		update TB_BOARD set view_cnt=view_cnt+1 where sid=#{sid}
+	</update>
+	
+	<insert id="addReply">
+		insert into TB_REPLY(sid,reply_user,reply_content,delete_at,creat_dt)
+				values(#{sid},#{reply_user},#{reply_content},#{delete_at},sysdate())
+	</insert>
+	
+	<select id="findReplyView" resultType="main.com.board.vo.ReplyVO">
+		select reply_user, reply_content, reply_no,creat_dt from tb_reply where delete_at=0 and sid=#{sid}
+	</select>
+	
+	<select id="ReplyCount" resultType="String">
+		select count(*) from tb_reply where delete_at=0 and sid=#{sid}
+	</select>
+	
+	<select id="findBoardPassword" resultType="String">
+		select bd_password from tb_board where sid=#{sid}
+	</select>
+</mapper>

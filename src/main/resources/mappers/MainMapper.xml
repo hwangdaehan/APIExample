@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="main.com.basic.dao.MainMapper">
+
+    <select id="findUserList" resultType="main.com.basic.vo.UserVO">
+        select * from TB_USER
+    </select>
+
+	<select id="findUser" resultType="main.com.basic.vo.UserVO">
+        select * from TB_USER where user_id=#{id}
+    </select>
+
+	<insert id="addUser">
+		insert into TB_USER(user_id,creat_dt,user_pw,user_name,user_email,user_phone,user_age,user_company,user_no,delete_at)
+				values(#{user_id},SYSDATE(),#{user_pw},#{user_name},#{user_email},#{user_phone},#{user_age},#{user_company},#{user_no},#{delete_at})
+	</insert>
+	
+	<update id="deleteUser">
+		update TB_USER set delete_at='1' where user_id=#{user_id} and user_pw=#{user_pw}
+	</update>
+	
+</mapper>
